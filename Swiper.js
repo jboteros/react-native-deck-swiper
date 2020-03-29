@@ -65,6 +65,17 @@ class Swiper extends Component {
     this.initializePanResponder()
   }
 
+   componentDidUpdate = (prevProps, prevState) => {
+    if(!isEqual(this.props.cards, prevProps.cards)) {
+        this.setState({
+            ...calculateCardIndexes(this.props.cardIndex, this.props.cards),
+            swipedAllCards: false,
+            cards:this.props.cards,
+            panResponderLocked: false,
+            labelType: LABEL_TYPES.NONE,
+        });
+    }
+}
   shouldComponentUpdate = (nextProps, nextState) => {
     const { props, state } = this
     const propsChanged = (
