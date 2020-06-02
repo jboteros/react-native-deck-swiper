@@ -375,7 +375,7 @@ class Swiper extends Component {
       toValue: 0,
       friction: this.props.topCardResetAnimationFriction,
       tension: this.props.topCardResetAnimationTension,
-      useNativeDriver: true,
+      // useNativeDriver: true,: true,
     }).start(cb);
 
     this.state.pan.setOffset({
@@ -452,7 +452,7 @@ class Swiper extends Component {
         y: y * SWIPE_MULTIPLY_FACTOR,
       },
       duration: this.props.swipeAnimationDuration,
-      useNativeDriver: true,
+      // useNativeDriver: true,: true,
     }).start(() => {
       this.setSwipeBackCardXY(x, y, () => {
         mustDecrementCardIndex = mustDecrementCardIndex
@@ -487,13 +487,13 @@ class Swiper extends Component {
         toValue: 0,
         friction: this.props.stackAnimationFriction,
         tension: this.props.stackAnimationTension,
-        useNativeDriver: true,
+        // useNativeDriver: true,: true,
       }),
       Animated.spring(this.state.previousCardY, {
         toValue: 0,
         friction: this.props.stackAnimationFriction,
         tension: this.props.stackAnimationTension,
-        useNativeDriver: true,
+        // useNativeDriver: true,: true,
       }),
     ]).start(() => {
       this.setState({ isSwipingBack: false });
@@ -518,13 +518,13 @@ class Swiper extends Component {
             toValue: newSeparation,
             friction: this.props.stackAnimationFriction,
             tension: this.props.stackAnimationTension,
-            useNativeDriver: true,
+            // useNativeDriver: true,: true,
           }),
           Animated.spring(this.state[`stackScale${stackSize}`], {
             toValue: newScale,
             friction: this.props.stackAnimationFriction,
             tension: this.props.stackAnimationTension,
-            useNativeDriver: true,
+            // useNativeDriver: true,: true,
           }),
         ]).start();
       }
